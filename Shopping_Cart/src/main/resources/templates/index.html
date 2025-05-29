@@ -5,7 +5,6 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-
 </head>
 
 <body>
@@ -172,7 +171,21 @@
 		</div>
 
 
-		<!-- End Latest Product Module -->
+		<!-- Full-width Back to Top Section -->
+		<button type="button" class="custom-back-btn" id="backToTopBtn"
+			title="Go to top"><b>Back To Top</b></button>
+
+
+		<!-- JavaScript for Smooth Scroll -->
+		<script>
+			document.getElementById("backToTopBtn").onclick = function() {
+				window.scrollTo({
+					top : 0,
+					behavior : 'smooth'
+				});
+			};
+		</script>
+
 	</section>
 </body>
 
