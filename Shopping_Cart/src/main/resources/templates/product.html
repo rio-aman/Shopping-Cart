@@ -24,8 +24,8 @@
 				</div>
 			</div>
 		</div>
-
-		<div class="container-fluid mt-1">
+		<br>
+		<div class="container mt-1">
 			<div class="row">
 				<div class="col-md-2 p-0">
 					<div class="card shadow-sm p-0 mb-5 bg-body-tertiary rounded">
@@ -47,40 +47,42 @@
 					<div class="card shadow-sm p-3 mb-5 bg-body-tertiary rounded">
 						<div class="card-body">
 							<p class="fs-3 text-center">Products</p>
-							<div class="row justify-content-center">
 
-								<th:block th:if="${productsSize > 0}">
-									<div class="col-10 col-sm-6 col-md-4 col-lg-3 mb-4"
-										th:each="p : ${products}">
-										<div class="card h-100 product-card">
-											<div
-												class="card-body d-flex flex-column justify-content-between">
-												<img alt="Product Image"
-													th:src="@{'/img/product_img/' + ${p.image}}"
-													class="img-fluid mb-2 product-image" />
-												<p class="fs-5 text-center mb-2">[[${p.title}]]</p>
-												<div class="text-center mb-3">
-													<span class="fs-6 fw-bold text-dark">&#8377;
-														[[${p.discountPrice}]]</span><br /> <span
-														class="text-decoration-line-through text-secondary">&#8377;
-														[[${p.price}]]</span><br /> <span class="fs-6 text-success">[[${p.discount}]]%
-														off</span>
-												</div>
-												<div class="text-center mt-auto">
-													<a th:href="@{'/product/' + ${p.id}}"
-														class="btn btn-primary w-75">View Details</a>
+							<th:block th:if="${productsSize > 0}">
+								<div class="row g-4">
+									<!-- 'g-4' adds consistent gap between columns and rows -->
+									<th:block th:each="p : ${products}">
+										<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+											<div class="card h-100 product-card">
+												<div
+													class="card-body d-flex flex-column justify-content-between">
+													<img alt="Product Image"
+														th:src="@{'/img/product_img/' + ${p.image}}"
+														class="img-fluid mb-2 product-image" />
+													<p class="fs-5 text-center mb-2">[[${p.title}]]</p>
+													<div class="text-center mb-3">
+														<span class="fs-6 fw-bold text-dark">&#8377;
+															[[${p.discountPrice}]]</span><br /> <span
+															class="text-decoration-line-through text-secondary">&#8377;
+															[[${p.price}]]</span><br /> <span class="fs-6 text-success">[[${p.discount}]]%
+															off</span>
+													</div>
+													<div class="text-center mt-auto">
+														<a th:href="@{'/product/' + ${p.id}}"
+															class="btn btn-primary w-75">View Details</a>
+													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-								</th:block>
+									</th:block>
+								</div>
+							</th:block>
 
-								<th:block th:unless="${productsSize > 0}">
-									<p class="fs-4 text-center mt-4 text-danger">Product not
-										available</p>
-								</th:block>
+							<th:block th:unless="${productsSize > 0}">
+								<p class="fs-4 text-center mt-4 text-danger">Product not
+									available</p>
+							</th:block>
 
-							</div>
 						</div>
 					</div>
 				</div>
@@ -115,7 +117,6 @@
 				</div>
 
 			</div>
-		</div>
 		</div>
 	</section>
 </body>

@@ -196,12 +196,25 @@ footer {
     }
 }
 
-    position: fixed;
+    /* position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #007bff; /* match your site's theme */
+    background-color: #007bff; match your site's theme
     color: white;
     text-align: center;
     padding: 10px 0;
     z-index: 1000;
+} */
+
+/* Ensure images do not overflow */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  max-width: 1300px;  
+  margin: 0 auto;
+  padding: 0 15px;
 }
